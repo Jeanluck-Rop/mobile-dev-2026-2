@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Tarea2</string>
+    <string name="btn_agregar_pedido_text">Agregar Pedido</string>
+    <string name="label_pedidos_hoy">Pedidos Hoy</string>
+    <string name="label_pedidos_empty">(Sin pedidos aún)</string>
+    <string name="btn_agregar_producto_text">Agregar Producto</string>
+    <string name="label_tus_productos">Tus Productos</string>
+    <string name="label_productos_empty">(Sin productos aún)</string>
+    <string name="regresar_a_main">Regresar</string>
+
+    <string name="agregar_pedido_nuevo_pedido">Nuevo Pedido</string>
+    <string name="agregar_pedido_select_producto">Selecciona los productos:</string>
+    <string name="agregar_pedido_label_total">Total:</string>
+    <string name="agregar_pedido_def_cantidad">$0.00</string>
+    <string name="agregar_pedido_btn_confirmar_pedido">Confirmar Pedido</string>
+
+    <string name="agregar_producto_nuevo_producto">Nuevo Producto</string>
+    <string name="agregar_producto_tipo_producto">Tipo de producto:</string>
+    <string name="agregar_producto_alimento">Alimento</string>
+    <string name="agregar_producto_bebida">Bebida</string>
+    <string name="agregar_producto_postre">Postre</string>
+    <string name="agregar_producto_extra">Extra</string>
+    <string name="agregar_producto_label_nombre">Nombre:</string>
+    <string name="agregar_producto_placeholder_nombre">Ingresa un nombre</string>
+    <string name="agregar_producto_label_imagen">Imagen:</string>
+    <string name="agregar_producto_btn_select_imagen">Seleccionar imagen</string>
+    <string name="agregar_producto_label_precio">Precio:</string>
+    <string name="agregar_producto_placeholder_precio">Ingresa un precio</string>
+    <string name="agregar_producto_guardar">Guardar Producto</string>
+
+</resources>
