@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+  <androidx.core.widget.NestedScrollView
+      android:id="@+id/main"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:fillViewport="true">
+
+    <LinearLayout
+	    android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    	android:orientation="vertical"
+	    android:padding="16dp"
+        android:layout_marginBottom="8dp">
+
+      <!-- SECCION 1: Pedidos -->
+      <Button
+          android:id="@+id/btnAgregarPedido"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/btn_agregar_pedido_text" />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/label_pedidos_hoy"
+          android:textSize="18sp"
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="4dp" />
+
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:id="@+id/listaPedidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/label_pedidos_empty"
+              android:padding="8dp" />
+
+        </LinearLayout>
+      </ScrollView>
+
+      <!-- SECCION 2: Productos -->
+      <Button
+          android:id="@+id/btnAgregarProducto"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/btn_agregar_producto_text" />
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/label_tus_productos"
+          android:textSize="18sp"
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="4dp" />
+
+      <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="120dp">
+
+        <LinearLayout
+            android:id="@+id/listaProductos"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+          <TextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/label_productos_empty"
+              android:padding="8dp" />
+
+        </LinearLayout>
+      </HorizontalScrollView>
+
+    </LinearLayout>
+  </androidx.core.widget.NestedScrollView>
+  
+  <com.google.android.material.navigation.NavigationView
+      android:id="@+id/nav_view"
+      android:layout_width="wrap_content"
+      android:layout_height="match_parent"
+      android:layout_gravity="start"
+      app:menu="@menu/nav_drawer_menu"
+      app:headerLayout="@layout/nav_drawer_header" />
+  
+</androidx.drawerlayout.widget.DrawerLayout>
