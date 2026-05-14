@@ -1,0 +1,81 @@
+<resources>
+  <string name="app_name">Tarea4</string>
+  <string name="btn_agregar_pedido_text">Agregar Pedido</string>
+  <string name="label_pedidos_hoy">Pedidos Hoy</string>
+  <string name="label_pedidos_empty">(Sin pedidos aún)</string>
+  <string name="btn_agregar_producto_text">Agregar Producto</string>
+  <string name="label_tus_productos">Tus Productos</string>
+  <string name="label_productos_empty">(Sin productos aún)</string>
+  <string name="regresar_a_main">Regresar</string>
+
+  <string name="agregar_pedido_nuevo_pedido">Nuevo Pedido</string>
+  <string name="agregar_pedido_select_producto">Selecciona los productos:</string>
+  <string name="agregar_pedido_label_total">Total:</string>
+  <string name="agregar_pedido_def_cantidad">$0.00</string>
+  <string name="agregar_pedido_btn_confirmar_pedido">Confirmar Pedido</string>
+
+  <string name="agregar_producto_nuevo_producto">Nuevo Producto</string>
+  <string name="agregar_producto_tipo_producto">Tipo de producto:</string>
+  
+  <string name="agregar_producto_alimento">Alimento</string>
+  <string name="agregar_producto_bebida">Bebida</string>
+  <string name="agregar_producto_postre">Postre</string>
+  <string name="agregar_producto_extra">Extra</string>
+  
+  <string name="agregar_producto_label_nombre">Nombre:</string>
+  <string name="agregar_producto_placeholder_nombre">Ingresa un nombre para el producto</string>
+  <string name="agregar_producto_label_imagen">Imagen:</string>
+  <string name="agregar_producto_btn_select_imagen">Seleccionar imagen</string>
+  <string name="agregar_producto_label_precio">Precio:</string>
+  <string name="agregar_producto_placeholder_precio">Ingresa un precio para el producto</string>
+  <string name="agregar_producto_guardar">Guardar Producto</string>
+
+  <string name="actionbar_title_main">Tarea4</string>
+  <string name="actionbar_title_pedido">Nuevo Pedido</string>
+  <string name="actionbar_title_producto">Nuevo Producto</string>
+  <string name="actionbar_title_historial">Historial</string>
+
+  <string name="action_nav_drawer">Menú</string>
+  <string name="action_history">Historial</string>
+  <string name="action_more">Más opciones</string>
+
+  <string name="nav_mi_cuenta">Mi Cuenta</string>
+  <string name="nav_mi_sitio">Mi Sitio</string>
+  <string name="nav_mis_productos">Mis Productos</string>
+  <string name="nav_cerrar_sesion">Cerrar Sesión</string>
+
+  <string name="popover_configuracion">Configuración</string>
+  <string name="popover_ayuda">Ayuda</string>
+  
+  <string name="label_historial_pedidos">Historial de Pedidos</string>
+  <string name="history_label">Historial Completo</string>
+
+  <!-- -->
+  <string name="agregar_pedido_label_cliente">Nombre del cliente</string>
+  <string name="agregar_pedido_placeholder_cliente">Ej. Juan Pérez</string>
+
+  <!-- MainActivity -->
+  <string name="toast_agregar_productos_primero">Primero agrega productos antes de crear un pedido</string>
+
+  <!-- AgregarPedidoActivity -->
+  <string name="pedido_sin_productos_registrados">No hay productos registrados.\nAgrega uno desde el menú principal.</string>
+  <string name="pedido_error_nombre_cliente">Ingresa el nombre del cliente</string>
+  <string name="toast_selecciona_producto">Selecciona al menos un producto</string>
+  <string name="toast_pedido_confirmado">Pedido de %1$s confirmado</string>
+  
+  <!-- AgregarProductoActivity -->
+  <string name="producto_error_nombre">Ingresa el nombre del producto</string>
+  <string name="producto_error_precio_vacio">Ingresa el precio</string>
+  <string name="producto_error_precio_invalido">Precio inválido</string>
+  
+  <string name="tipo_alimento">Alimento</string>
+  <string name="tipo_bebida">Bebida</string>
+  <string name="tipo_postre">Postre</string>
+  <string name="tipo_extra">Extra</string>
+  
+  <string name="toast_producto_agregado">Producto \"%1$s\" agregado</string>
+
+  <!-- Imagenes -->
+  <string name="producto_permiso_imagen_razon">Se necesita acceso a la galería para agregar una imagen al producto.</string>
+  <string name="producto_permiso_imagen_denegado">Permiso denegado. No se pudo acceder a la galería.</string>
+</resources>

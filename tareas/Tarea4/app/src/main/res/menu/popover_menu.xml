@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+      android:id="@+id/popover_configuracion"
+      android:icon="@drawable/gear_icon"
+      android:title="@string/popover_configuracion" />
+  
+  <item
+      android:id="@+id/popover_ayuda"
+      android:icon="@drawable/help_icon"
+      android:title="@string/popover_ayuda" />
+</menu>

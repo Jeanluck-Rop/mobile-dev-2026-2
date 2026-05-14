@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="horizontal"
+  android:gravity="center_vertical"
+  android:padding="8dp"
+  android:layout_marginBottom="4dp"
+  android:background="@android:color/white"
+  android:elevation="1dp">
+
+  <ImageView
+    android:id="@+id/ivPedidoIcono"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:src="@drawable/pedido_icon1"
+    android:contentDescription="Icono pedido"
+    android:layout_marginEnd="10dp"
+    android:scaleType="fitCenter" />
+
+  <LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="vertical">
+
+    <TextView
+      android:id="@+id/tvPedidoCliente"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Cliente"
+      android:textSize="14sp"
+      android:textStyle="bold"
+      android:maxLines="1"
+      android:ellipsize="end" />
+
+    <TextView
+      android:id="@+id/tvPedidoItems"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="item1 x1, item2 x2"
+      android:textSize="12sp"
+      android:textColor="#757575"
+      android:maxLines="2"
+      android:ellipsize="end" />
+
+  </LinearLayout>
+
+  <TextView
+    android:id="@+id/tvPedidoTotal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="$0.00"
+    android:textSize="14sp"
+    android:textStyle="bold"
+    android:layout_marginStart="8dp" />
+
+</LinearLayout>

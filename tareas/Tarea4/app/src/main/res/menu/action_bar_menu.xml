@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  
+  <item
+      android:id="@+id/action_history"
+      android:icon="@drawable/history_icon"
+      android:orderInCategory="1"
+      android:title="@string/action_history"
+      app:showAsAction="always"
+      app:iconTint="@android:color/white" />
+  
+  <item
+      android:id="@+id/action_more"
+      android:icon="@drawable/dots_menu_icon"
+      android:orderInCategory="2"
+      android:title="@string/action_more"
+      app:showAsAction="always"
+      app:iconTint="@android:color/white"/>
+</menu>

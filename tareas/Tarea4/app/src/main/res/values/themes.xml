@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+  <style name="Base.Theme.Tarea4" parent="Theme.Material3.DayNight">
+    <item name="colorPrimary">@color/purple_700</item>
+    
+    <item name="android:statusBarColor">@color/purple_700</item>
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    
+    <item name="actionBarStyle">@style/ActionBarStyle</item>
+    <item name="actionBarTheme">@style/ElementsActionBar</item>
+  </style>
+
+  <style name="Theme.Tarea4" parent="Base.Theme.Tarea4" />
+  <style name="ActionBarStyle" parent="Widget.Material3.ActionBar.Solid">
+        <item name="background">@color/purple_700</item>
+        <item name="titleTextColor">@android:color/white</item>
+        <item name="titleTextStyle">@style/WhiteTitleStyle</item>
+    </style>
+
+    <style name="WhiteTitleStyle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="ElementsActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+      <item name="colorControlNormal">@android:color/white</item>
+      <item name="android:textColorPrimary">@android:color/white</item>
+
+      <item name="colorOnSurface">@android:color/white</item>
+      <item name="colorOnSurfaceVariant">@android:color/white</item>
+      <item name="colorOnPrimary">@android:color/white</item>
+    </style>
+</resources>
