@@ -18,7 +18,7 @@ class HistoryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_history)
 
-	ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout)) { v, insets ->
+	ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.contenido_history)) { v, insets ->
 	    val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
 	    v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
 	    insets

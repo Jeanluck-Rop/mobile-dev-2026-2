@@ -8,11 +8,11 @@
   tools:context=".HistoryActivity">
   
   <LinearLayout
+    android:id="@+id/contenido_history"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="12dp"
-    android:layout_marginTop="24dp">
+    android:padding="12dp">
     
     <TextView
       android:layout_width="wrap_content"

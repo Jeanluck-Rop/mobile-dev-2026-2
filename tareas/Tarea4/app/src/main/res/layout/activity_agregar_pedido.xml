@@ -7,35 +7,39 @@
   android:layout_height="match_parent"
   tools:context=".AgregarPedidoActivity">
   
-  <LinearLayout
+  <ScrollView
+    android:id="@+id/contenido_pedido"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginTop="24dp"
-    android:layout_marginBottom="24dp">
-
-    <TextView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/agregar_pedido_label_cliente"
-      android:textSize="16sp"
-      android:layout_marginBottom="4dp" />
-
-    <EditText
-      android:id="@+id/etNombreCliente"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:hint="@string/agregar_pedido_placeholder_cliente"
-      android:inputType="textPersonName"
-      android:layout_marginBottom="12dp" />
+    android:fillViewport="true">
     
-    <TextView
+    <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:text="@string/agregar_pedido_select_producto"
-      android:textSize="16sp"
-      android:layout_marginBottom="8dp" />
+      android:layout_height="match_parent"
+      android:orientation="vertical"
+      android:padding="16dp">
+      
+      <TextView
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/agregar_pedido_label_cliente"
+			      android:textSize="16sp"
+	android:layout_marginBottom="4dp" />
+      
+      <EditText
+	android:id="@+id/etNombreCliente"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:hint="@string/agregar_pedido_placeholder_cliente"
+	android:inputType="textPersonName"
+	android:layout_marginBottom="12dp" />
+      
+      <TextView
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:text="@string/agregar_pedido_select_producto"
+	android:textSize="16sp"
+	android:layout_marginBottom="8dp" />
     
     <ScrollView
       android:layout_width="match_parent"
@@ -80,6 +84,6 @@
       android:layout_height="wrap_content"
       android:text="@string/agregar_pedido_btn_confirmar_pedido"
       android:layout_marginTop="8dp" />
-  </LinearLayout>
-  
+    </LinearLayout>
+  </ScrollView>
 </androidx.drawerlayout.widget.DrawerLayout>
