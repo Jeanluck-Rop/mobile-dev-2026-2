@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Imagen actual -->
+        <ImageView
+            android:id="@+id/ivDialogProducto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Nombre -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="12sp"
+            android:textColor="#757575" />
+
+        <EditText
+            android:id="@+id/etDialogNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Precio -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Precio"
+            android:textSize="12sp"
+            android:textColor="#757575" />
+
+        <EditText
+            android:id="@+id/etDialogPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Tipo -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tipo"
+            android:textSize="12sp"
+            android:textColor="#757575" />
+
+        <RadioGroup
+          android:id="@+id/rgDialogTipo"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginBottom="16dp">
+
+          <RadioButton android:id="@+id/rbDialogAlimento"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Alimento" />
+          <RadioButton android:id="@+id/rbDialogBebida"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Bebida" />
+          <RadioButton android:id="@+id/rbDialogPostre"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Postre" />
+          <RadioButton android:id="@+id/rbDialogExtra"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Extra" />
+        </RadioGroup>
+
+        <!-- Botones -->
+        <Button
+          android:id="@+id/btnDialogGuardarProducto"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Guardar cambios"
+          android:backgroundTint="@color/purple_700"
+          android:layout_marginBottom="8dp" />
+
+        <Button
+          android:id="@+id/btnDialogEliminarProducto"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Eliminar producto"
+          android:backgroundTint="#D32F2F" />
+    </LinearLayout>
+</ScrollView>

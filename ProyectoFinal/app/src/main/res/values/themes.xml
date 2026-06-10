@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+  <style name="Base.Theme.ProyectoFinal" parent="Theme.Material3.DayNight.NoActionBar">
+    <item name="android:windowBackground">@android:color/white</item>
+    
+    <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+    
+    <item name="actionBarStyle">@style/ActionBarStyle</item>
+    <item name="actionBarTheme">@style/ElementsActionBar</item>
+  </style>
+
+  <style name="Theme.ProyectoFinal" parent="Base.Theme.ProyectoFinal" />
+  <style name="ActionBarStyle" parent="Widget.Material3.ActionBar.Solid">
+  <item name="titleTextColor">@android:color/white</item>
+  <item name="titleTextStyle">@style/WhiteTitleStyle</item>
+  </style>
+
+  <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+    <item name="windowSplashScreenBackground">@color/purple_700</item> 
+    <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_logo</item>
+    <item name="windowSplashScreenAnimationDuration">200</item>
+    <item name="postSplashScreenTheme">@style/Theme.ProyectoFinal</item>
+  </style>
+  
+  <style name="WhiteTitleStyle" parent="TextAppearance.Material3.TitleLarge">
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+  
+  <style name="ElementsActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+    <item name="colorControlNormal">@android:color/white</item>
+    <item name="android:textColorPrimary">@android:color/white</item>
+    
+    <item name="colorOnSurface">@android:color/white</item>
+    <item name="colorOnSurfaceVariant">@android:color/white</item>
+    <item name="colorOnPrimary">@android:color/white</item>
+  </style>
+
+  <style name="NavDrawerTextAppearance" parent="@android:style/TextAppearance">
+    <item name="android:textSize">18sp</item>
+    <item name="android:textColor">@android:color/white</item>
+  </style>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:id="@+id/nav_mis_pedidos"
+    android:icon="@drawable/mis_pedidos_icon"
+    android:title="@string/nav_mis_pedidos" />
+  
+  <item
+    android:id="@+id/nav_mis_productos"
+    android:icon="@drawable/mis_productos_icon"
+    android:title="@string/nav_mis_productos" />
+</menu>
