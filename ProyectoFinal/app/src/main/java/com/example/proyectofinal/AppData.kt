@@ -45,50 +45,54 @@ object AppData {
         }
         cursorProds.close()
 
-        // 2. Sincronizar Pedidos Generales en RAM
-	val contextGlobal = productos.hashCode()
-    }
-
-    //Metodo sobrecargado secundario para llamar de forma limpia desde refrescarListasDesdeBD
-    fun refrescarListasConContexto(context: Context) {
-        productos.clear()
-        pedidos.clear()
-        pedidos.addAll(obtenerPedidosFiltrados(context, null, null))
+	// 2. Cargar Pedidos
+	val cursorPeds = db.rawQuery(
+            "SELECT id, nombreCliente, iconoIndex, fecha_creacion FROM pedidos ORDER BY fecha_creacion DESC",
+            null
+	)
+	if (cursorPeds.moveToFirst()) {
+            do {
+		val pId     = cursorPeds.getInt(cursorPeds.getColumnIndexOrThrow("id"))
+		val cliente = cursorPeds.getString(cursorPeds.getColumnIndexOrThrow("nombreCliente"))
+		val icono   = cursorPeds.getInt(cursorPeds.getColumnIndexOrThrow("iconoIndex"))
+		val fecha   = cursorPeds.getString(cursorPeds.getColumnIndexOrThrow("fecha_creacion"))
+		val items   = extraerItemsRelacionados(db, pId)
+		pedidos.add(Pedido(pId, cliente, items, icono, fecha))
+            } while (cursorPeds.moveToNext())
+	}
+	cursorPeds.close()
     }
     
     fun obtenerPedidosFiltrados(context: Context, fInicio: String?, fFin: String?): List<Pedido> {
-        val listaResultados = mutableListOf<Pedido>()
-        val db = dbHelper.readableDatabase
-        
-        var query = "SELECT id, nombreCliente, iconoIndex, fecha_creacion FROM pedidos"
-        val args = mutableListOf<String>()
+	val listaResultados = mutableListOf<Pedido>()
+	val db = dbHelper.readableDatabase
 
-        if (fInicio != null && fFin != null) {
-            // Evaluamos si el fin de mes requiere interpolación de funciones internas de SQLite
-	    val finAjustado = if (fFin != null && fFin.contains("date( ")) fFin else "?"
-            query += " WHERE fecha_creacion BETWEEN ? AND $finAjustado"
+	var query = "SELECT id, nombreCliente, iconoIndex, fecha_creacion FROM pedidos"
+	val args  = mutableListOf<String>()
+
+	if (fInicio != null && fFin != null) {
+            query += " WHERE fecha_creacion BETWEEN ? AND ?"
             args.add(fInicio)
-            if (finAjustado == "?") args.add(fFin)
-        }
-        query += " ORDER BY fecha_creacion DESC"
+            args.add(fFin)
+	}
+	query += " ORDER BY fecha_creacion DESC"
 
-        val cursor = db.rawQuery(query, args.toTypedArray())
-        try {
+	val cursor = db.rawQuery(query, args.toTypedArray())
+	try {
             if (cursor.moveToFirst()) {
-                do {
-                    val pId = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
+		do {
+                    val pId     = cursor.getInt(cursor.getColumnIndexOrThrow("id"))
                     val cliente = cursor.getString(cursor.getColumnIndexOrThrow("nombreCliente"))
-                    val icono = cursor.getInt(cursor.getColumnIndexOrThrow("iconoIndex"))
-                    val fecha = cursor.getString(cursor.getColumnIndexOrThrow("fecha_creacion"))
-
-                    val itemsCompletos = extraerItemsRelacionados(db, pId)
-                    listaResultados.add(Pedido(pId, cliente, itemsCompletos, icono, fecha))
-                } while (cursor.moveToNext())
+                    val icono   = cursor.getInt(cursor.getColumnIndexOrThrow("iconoIndex"))
+                    val fecha   = cursor.getString(cursor.getColumnIndexOrThrow("fecha_creacion"))
+                    val items   = extraerItemsRelacionados(db, pId)
+                    listaResultados.add(Pedido(pId, cliente, items, icono, fecha))
+		} while (cursor.moveToNext())
             }
-        } finally {
+	} finally {
             cursor.close()
-        }
-        return listaResultados
+	}
+	return listaResultados
     }
 
     private fun extraerItemsRelacionados(db: SQLiteDatabase, pedidoId: Int): List<ItemPedido> {

@@ -59,7 +59,7 @@ class MisPedidosActivity : AppCompatActivity() {
         super.onResume()
 	AppTheme.aplicar(this)
         // Recargamos desde BD cada vez que volvemos a la pantalla
-        AppData.refrescarListasConContexto(this)
+	AppData.refrescarListasDesdeBD() 
         listaActual = AppData.pedidos.toList()
         filtrarYRenderizar(etBuscar.text.toString())
     }

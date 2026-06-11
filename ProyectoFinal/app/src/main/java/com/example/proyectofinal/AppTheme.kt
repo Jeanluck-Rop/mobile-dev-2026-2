@@ -18,7 +18,7 @@ import androidx.core.widget.CompoundButtonCompat
 
 object AppTheme {
 
-    private const val PREFS_NAME   = "orderly_prefs"
+    private const val PREFS_NAME = "orderly_prefs"
     private const val KEY_COLOR_ID = "theme_color_res_id"
 
     private fun defaultColorRes() = R.color.purple_700
@@ -56,19 +56,16 @@ object AppTheme {
 
 	// 1. Toolbar
 	activity.findViewById<Toolbar>(R.id.toolbar)?.setBackgroundColor(color)
-	
-	// 2. Status bar
-	activity.window.statusBarColor = color
-	
-	// 3. Botones de MainActivity
+		
+	// 2. Botones de MainActivity
 	activity.findViewById<Button>(R.id.btnAgregarPedido)?.backgroundTintList = tint
 	activity.findViewById<Button>(R.id.btnAgregarProducto)?.backgroundTintList = tint
 	
-	// 4. Botones de AgregarProductoActivity
+	// 3. Botones de AgregarProductoActivity
 	activity.findViewById<Button>(R.id.btnSeleccionarImagen)?.backgroundTintList = tint
 	activity.findViewById<Button>(R.id.btnGuardarProducto)?.backgroundTintList = tint
 	
-	// 5. RadioButtons de AgregarProductoActivity
+	// 4. RadioButtons de AgregarProductoActivity
 	val radioGroup = activity.findViewById<RadioGroup>(R.id.rgTipoProducto)
 	if (radioGroup != null) {
             val radioTint = ColorStateList(

@@ -73,8 +73,6 @@ class PopoverMenu(
         activity.findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
             ?.setBackgroundColor(color)
 
-        activity.window.statusBarColor = color
-
         activity.findViewById<Button>(R.id.btnAgregarPedido)
             ?.backgroundTintList = tint
         activity.findViewById<Button>(R.id.btnAgregarProducto)

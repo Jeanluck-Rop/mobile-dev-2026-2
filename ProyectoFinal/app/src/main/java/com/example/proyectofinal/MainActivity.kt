@@ -83,6 +83,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 	AppTheme.aplicar(this)
+	AppData.refrescarListasDesdeBD()
         refrescarProductos()
         refrescarPedidos()
     }
@@ -120,31 +121,42 @@ class MainActivity : AppCompatActivity() {
     private fun refrescarPedidos() {
         llListaPedidos.removeAllViews()
 	
-        if (AppData.pedidos.isEmpty()) {
-            val tv = TextView(this).apply {
-                text = getString(R.string.label_pedidos_empty)
-                setPadding(16, 16, 16, 16)
-            }
-            llListaPedidos.addView(tv)
-            return
-        }
+	val hoy = java.text.SimpleDateFormat("yyyy-MM-dd", java.util.Locale.getDefault())
+            .format(java.util.Date())
+	val fechaMostrar = java.text.SimpleDateFormat("d 'de' MMMM", java.util.Locale.forLanguageTag("es-MX"))
+	    .format(java.util.Date())
 	
-        for (pedido in AppData.pedidos.takeLast(5).reversed()) {
+	// Actualiza el label con la fecha de hoy
+	findViewById<TextView>(R.id.labelPedidosHoy)?.text =
+            "Pedidos de Hoy — $fechaMostrar"
+	
+	// Filtra solo los pedidos de hoy
+	val pedidosHoy = AppData.pedidos.filter {
+            it.fechaCreacion.startsWith(hoy)
+	}
+	
+	if (pedidosHoy.isEmpty()) {
+            llListaPedidos.addView(TextView(this).apply {
+				       text = getString(R.string.label_pedidos_empty)
+				       setPadding(16, 16, 16, 16)
+				   })
+            return
+	}
+	
+	for (pedido in pedidosHoy) {
             val fila = layoutInflater.inflate(R.layout.item_pedido, llListaPedidos, false)
-
             val iconoRes = when (pedido.iconoIndex) {
-                1 -> R.drawable.pedido_icon1
-                2 -> R.drawable.pedido_icon2
+		1 -> R.drawable.pedido_icon1
+		2 -> R.drawable.pedido_icon2
 		3 -> R.drawable.pedido_icon3
-                else -> R.drawable.pedido_icon4
-            }
-	    
+		else -> R.drawable.pedido_icon4
+        }
             fila.findViewById<ImageView>(R.id.ivPedidoIcono).setImageResource(iconoRes)
             fila.findViewById<TextView>(R.id.tvPedidoCliente).text = pedido.nombreCliente
             fila.findViewById<TextView>(R.id.tvPedidoItems).text = pedido.resumenItems
             fila.findViewById<TextView>(R.id.tvPedidoTotal).text = "$${String.format("%.2f", pedido.total)}"
 	    llListaPedidos.addView(fila)
-        }
+	}
     }
     
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
